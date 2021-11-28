@@ -1,0 +1,244 @@
+ 
+import os
+os.system("tput setaf 2")
+print("\t\t\t\twelcome to my menu")
+os.system("espeak-ng -v en+m1 'long live arth 2.o' -s120")
+print("\t\t\t\t ----------------")
+print()
+os.system("tput setaf 6")
+while True:
+	print('''
+               press 1: date
+               press 2: calender
+               press 3: list command
+               press 4: pwd
+	       press 5: cowsay 
+               press 6: another one of cowsay
+               press 7: funny train on cli
+               press 8:
+               press 9:reverse
+               press 10: factor
+ 	       press 11:linear search
+               press 12:bineary search
+               press 13:bubble sort
+               press 14:insertion sort
+               press 15:selection sort
+
+                  ''')
+	os.system("tput setaf 2")
+	os.system("espeak-ng -v en+m1 'please enter your choice' -s120")
+	print("enter your choice",end=' ' )
+	ch=input()
+	print(ch)
+	if int(ch)==1:
+		os.system("espeak-ng -v en+m1 'this is your today date' -s120")
+		os.system("date")
+	elif int(ch)==2:
+		os.system("espeak-ng -v en+m1 'this is your calender' -s120")
+		os.system("cal")
+	elif int(ch)==3:
+		os.system("espeak-ng -v en+m1 'this is list of folder' -s120")
+		os.system("ls")
+	elif int(ch)==4:
+		os.system("espeak-ng -v en+m1 'this is your recent dir' -s120")
+		os.system("pwd")
+	elif int(ch)==5:
+		os.system("espeak-ng -v en+m1 'this is your recent cowsay' -s120")
+		os.system("cowsay arth 2.0")
+	elif int(ch)==6:
+		os.system("espeak-ng -v en+m1 'this is your feature of cowsay' -s120")
+		os.system("cowsay -f meow BHUPENDRA KUMAR HERE")
+	elif int(ch)==7:
+		os.system("espeak-ng -v en+m1 'this is your recent sl' -s120")
+		os.system("sl")
+	elif int(ch)==8:
+		os.system("espeak-ng -v en+m1 'this is your recent reverse' -s120")
+		os.system("pwd")
+	elif int(ch)==9:
+		os.system("espeak-ng -v en+m1 'this is your recent dir' -s120")
+		os.system("rev")
+		print("enter your choice",end=' ' )
+	elif int(ch)==10:
+		os.system("espeak-ng -v en+m1 'this is your recent factor of 10' -s120")
+		os.system("factor 10")
+	elif int(ch)==11:
+		#linear search
+
+
+
+		def search(lst,target):
+
+			for i in range(len(lst)):
+				if lst[i]==target:
+					return i
+
+
+			return -1
+
+
+		lst=[]# making empty list
+
+		n=int(input("enter your no : ")) #taking no of input
+
+		for i in range(0,n):
+			ele=int(input())
+			lst.append(ele)
+
+		print(lst)
+		target=int(input("enter your search"))#your saerching target
+		ans=search(lst,target)
+		print(ans)
+#########################################################################################3
+	elif int(ch)==12:
+		#bineary search
+
+
+
+		def search(lst,target):
+			low=0
+			high=len(lst)-1
+			mid=0
+			
+			while low<=high:
+
+				mid =(high+low)//2
+
+				#if x is greater ,ignore left half
+				if lst[mid]<target:
+					low=mid+1
+
+				# if x is smaller,ignore right half
+				elif lst[mid]>target:
+					high=mid-1
+				else:
+					return mid
+
+			return -1
+	
+
+		lst=[]# making empty list
+
+		n=int(input("enter your sorted data no : ")) #taking no of input
+
+		for i in range(0,n):
+			ele=int(input())
+			lst.append(ele)
+
+		print(lst)
+		target=int(input("enter your search"))#your saerching target
+		ans=search(lst,target)
+		print(ans)
+
+########################################################################################
+	elif int(ch)==13:
+		#bubble sort
+
+
+
+		def bubblesort(lst):
+			
+			#
+			for i in range(0,len(lst)-1):
+				for j in range(len(lst)-1):
+					if(lst[j]>lst[j+1]):
+						lst[j],lst[j+1]=lst[j+1],lst[j]
+
+			return lst
+
+
+
+
+
+		lst=[]# making empty list
+
+		n=int(input("enter your random data  : ")) #taking no of input
+
+		for i in range(0,n):
+			ele=int(input())
+			lst.append(ele)
+
+		print(lst)
+		#target=int(input("enter your search"))#your saerching target
+		ans=bubblesort(lst)
+		print(ans)
+########################################################################################
+	elif int(ch)==14:
+		#insertion sort
+		def insertionsort(lst):
+			
+			#
+			for i in range(1,len(lst)):
+				key=lst[i]
+				j=i-1
+				
+
+				while j>=0 and key<lst[j]:
+					lst[j+1]=lst[j]
+					j-=1
+				lst[j+1]=key
+			return lst
+
+
+
+
+
+		lst=[]# making empty list
+
+		n=int(input("enter your random data  : ")) #taking no of input
+
+		for i in range(0,n):
+			ele=int(input())
+			lst.append(ele)
+
+		print(lst)
+		#target=int(input("enter your search"))#your saerching target
+		ans=insertionsort(lst)
+		print(ans)
+
+
+		
+#####################################################################################
+	elif int(ch)==15:
+		#selection sort
+		def selectionsort(lst):
+			
+			#
+			for i in range(len(lst)):
+				mid_idx=i
+				for j in range(i+1,len(lst)):
+					if lst[min_idx]>lst[j]:
+						mid_idx=j
+
+				lst[i],lst[min_idx]=lst[min_idx],lst[i]
+			return lst
+
+
+
+
+
+		lst=[]# making empty list
+
+		n=int(input("enter your random data  : ")) #taking no of input
+
+		for i in range(0,n):
+			ele=int(input())
+			lst.append(ele)
+
+		print(lst)
+		#target=int(input("enter your search"))#your saerching target
+		ans=selectionsort(lst)
+		print(ans)
+
+		
+
+
+##################################################################################
+
+	else:
+		exit()
+	input()
+	print("enter any key")
+	os.system("clear")
+
+
+	
